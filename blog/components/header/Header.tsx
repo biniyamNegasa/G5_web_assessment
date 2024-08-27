@@ -11,7 +11,12 @@ const Header = () => {
         <Link href="#">Teams</Link>
         <Link href="#">Success Stories</Link>
         <Link href="#">About Us</Link>
-        <Link href="#">Blogs</Link>
+        <Link
+          href="#"
+          className="border-b-4 rounded-b-sm font-bold text-xl border-b-[#264FAD] text-[#264FAD]"
+        >
+          Blogs
+        </Link>
         <Link href="#">Get Involved</Link>
       </div>
       <div className="flex gap-[25px] font-bold">

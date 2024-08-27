@@ -9,7 +9,7 @@ const blogApi = createApi({
       query: () => "/api/blogs",
     }),
     getBlogById: builder.query({
-      query: (id: number) => `/api/blogs/${id}`,
+      query: (id: string) => `/api/blogs/${id}`,
     }),
   }),
 });
