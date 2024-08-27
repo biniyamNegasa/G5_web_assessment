@@ -1,3 +1,9 @@
+import BlogPage from "@/components/blogPage/BlogPage";
+
 export default function Home() {
-  return <h1>Hello People!</h1>;
+  return (
+    <div>
+      <BlogPage />
+    </div>
+  );
 }
