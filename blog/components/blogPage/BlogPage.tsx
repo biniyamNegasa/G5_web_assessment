@@ -1,6 +1,14 @@
+"use client";
+import { useGetBlogsQuery } from "@/lib/service/blog-api";
 import BlogCard from "../blogCard/BlogCard";
+import { BlogType } from "@/types/blog-data-type";
 
 const BlogPage = () => {
+  const { data, isLoading } = useGetBlogsQuery({});
+  if (isLoading) return <div>Loading...</div>;
+  const blogArray: BlogType[] = data.filter(
+    (elm: BlogType) => elm.author != null
+  );
   return (
     <div>
       <div className="flex items-center pl-16 gap-[22%]">
@@ -20,9 +28,11 @@ const BlogPage = () => {
           </div>
         </div>
       </div>
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
+      <div>
+        {blogArray.map((blog: BlogType) => (
+          <BlogCard key={blog._id} {...blog} />
+        ))}
+      </div>
     </div>
   );
 };
