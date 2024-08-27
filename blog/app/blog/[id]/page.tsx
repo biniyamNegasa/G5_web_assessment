@@ -9,7 +9,7 @@ const SigleBlogPage = ({ params }: BlogPageProps) => {
   const { data, isLoading, isError } = useGetBlogByIdQuery(id);
 
   if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>There's has been an error!</div>
+  if (isError) return <div>There&apos;s has been an error!</div>;
   return (
     <div>
       <SingleBlog {...data} />

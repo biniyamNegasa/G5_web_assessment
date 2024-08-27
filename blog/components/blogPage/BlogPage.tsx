@@ -8,7 +8,7 @@ const BlogPage = () => {
   const router = useRouter();
   const { data, isLoading, isError } = useGetBlogsQuery({});
   if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>There's has been an error!</div>;
+  if (isError) return <div>There&apos;s has been an error!</div>;
   const blogArray: BlogType[] = data.filter(
     (elm: BlogType) => elm.author != null
   );
