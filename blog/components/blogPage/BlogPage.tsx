@@ -5,9 +5,10 @@ import { BlogType } from "@/types/blog-data-type";
 import { useRouter } from "next/navigation";
 
 const BlogPage = () => {
-  const { data, isLoading } = useGetBlogsQuery({});
-  if (isLoading) return <div>Loading...</div>;
   const router = useRouter();
+  const { data, isLoading, isError } = useGetBlogsQuery({});
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>There's has been an error!</div>;
   const blogArray: BlogType[] = data.filter(
     (elm: BlogType) => elm.author != null
   );
@@ -35,6 +36,7 @@ const BlogPage = () => {
           <div
             className="cursor-pointer"
             onClick={() => router.push(`/blog/${blog._id}`)}
+            key={blog._id}
           >
             <BlogCard key={blog._id} {...blog} />
           </div>
