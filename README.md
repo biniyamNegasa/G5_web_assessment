@@ -2,6 +2,10 @@
 
 An implementation of a blog feature from a website
 
+## Here is the deployment link
+
+https://g5-web-assessment-ojce.vercel.app/
+
 ## How to run this app
 
 - Clone this repo
